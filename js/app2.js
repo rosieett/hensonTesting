@@ -53,9 +53,13 @@ $(document).ready(function() {
 
 	let filters = {};
 
-	$('#muppetType .button').on('click', function(event) {
+	$('.filter .button').on('click', function(event) {
 
 		event.preventDefault();
+
+		$('.filter .button').removeClass('is-clicked');
+		$(this).addClass('is-clicked');
+
 		let filterGroup = $(this).parent().attr('data-filter-group');
 		filters[filterGroup] = $(this).attr('data-filter-value');
 
@@ -85,12 +89,12 @@ $(document).ready(function() {
 	// });
 
 	// change is-checked class on buttons
-	$('.button-group').each(function(i, buttonGroup) {
-		var $buttonGroup = $(buttonGroup);
-		$buttonGroup.on('click', 'button', function() {
-			$buttonGroup.find('.is-checked').removeClass('is-checked');
-			$(this).addClass('is-checked');
-		});
-	});
+	// $('.button-group').each(function(i, buttonGroup) {
+	// 	var $buttonGroup = $(buttonGroup);
+	// 	$buttonGroup.on('click', 'button', function() {
+	// 		$buttonGroup.find('.is-checked').removeClass('is-checked');
+	// 		$(this).addClass('is-checked');
+	// 	});
+	// });
 
 });

@@ -157,7 +157,7 @@ h5 {
   margin-left: 30px;
 }
 
-.button{
+a.button{
   display: inline-block;
   padding: 5px 15px;
   margin-right: -7px;
@@ -179,7 +179,7 @@ h5 {
   color:  #318e5a;
 }
 
-.is-clicked{
+a.is-clicked{
   background-color: #318e5a;
   color: white;
 }
