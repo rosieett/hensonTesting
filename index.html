@@ -189,30 +189,20 @@
 
       <nav class="filter sticky-top">
 
+
         <h2>Filter</h2>
-          <div id="muppetType" class="button-group">  <button class="button is-checked" data-filter="*">show all</button>
-          <button class="button" data-muppetType="animal">animal</button>
-          <button class="button" data-muppetType="people">People</button>
-          <button class="button" data-filter=".alkali, .alkaline-earth">alkali and alkaline-earth</button>
-          </div>
 
-        <!-- <h2>Sort</h2>
-          <div id="sorts" class="button-group">  <button class="button is-checked" data-sort-by="original-order">original order</button>
-          <button class="button" data-sort-by="name">name</button>
-          <button class="button" data-sort-by="symbol">symbol</button>
-          </div> -->
-
-        <div class="buttonGroup" id="muppetType">
+        <div class="buttonGroup" id="muppetType" data-filter-group="muppetType">
           <h2 class="label green">Type of Muppet:</h2>
-          <a href="#" class="button" id="animal" alt="animal button">Animal</a>
-          <a href="#" class="button" id="people" alt="people button">People</a>
-          <a href="#" class="button" id="monster" alt="monster button">Monster</a>
+          <a href="#" class="button" id="animal" alt="animal button" data-filter-value="animal">Animal</a>
+          <a href="#" class="button" id="people" alt="people button" data-filter-value="people">People</a>
+          <a href="#" class="button" id="monster" alt="monster button" data-filter-value="monster">Monster</a>
         </div>
 
-        <div class="buttonGroup" id="showType">
+        <div class="buttonGroup" id="showType" data-filter-group="showType">
           <h2 class="label green">Appeared On:</h2>
-          <a href="#" class="button" id="sesameStreet">Sesame Street</a>
-          <a href="#" class="button" id="theMuppetShow">The Muppet Show</a>
+          <a href="#" class="button" id="sesameStreet" data-filter-value="sesameStreet">Sesame Street</a>
+          <a href="#" class="button" id="theMuppetShow" data-filter-value="theMuppetShow">The Muppet Show</a>
         </div>
 
         <!-- <div class="buttonGroup" id="bothType">
@@ -220,7 +210,7 @@
         </div> -->
 
         <div class="buttonGroup" id="reset">
-          <a href="#" class="button">RESET</a>
+          <a href="#" class="button" data-filter-value="">RESET</a>
         </div>
 
       </nav>
