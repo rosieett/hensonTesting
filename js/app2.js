@@ -55,30 +55,27 @@ $(document).ready(function() {
 
 	$('.filter .button').on('click', function(event) {
 
+		// Prevent the anchor from going anywhere
 		event.preventDefault();
 
-		$('.filter .button').removeClass('is-clicked');
+		// Handle the button active states per button-group
+		let $buttonGroup = $(this).parent();
+		$buttonGroup.find('.is-clicked').removeClass('is-clicked');
 		$(this).addClass('is-clicked');
 
-		let filterGroup = $(this).parent().attr('data-filter-group');
+		// Separate filters by button group
+		let filterGroup = $buttonGroup.attr('data-filter-group');
 		filters[filterGroup] = $(this).attr('data-filter-value');
 
-		let activeFilters = Object.values(filters).map(filter => '.' + filter)
+		// Convert all filters into a combined CSS class selector string, e.g. ".animal.muppetShow"
+		let activeFilters = Object.values(filters).map(filter => '.' + filter).join('');
 
+		// Activate filter
 		$grid.isotope({
-			filter: activeFilters.join('')
+			filter: activeFilters
 		});
 
 	});
-
-	// $('#muppetType .button').on('click', function() {
-	// 	let filterValue = $(this).attr('data-filter');
-	// 	$grid.isotope({
-	// 		filter: filterValue
-	// 	});
-	// });
-
-
 
 	// // bind sort button click
 	// $('#sorts').on('click', 'button', function() {
@@ -92,8 +89,8 @@ $(document).ready(function() {
 	// $('.button-group').each(function(i, buttonGroup) {
 	// 	var $buttonGroup = $(buttonGroup);
 	// 	$buttonGroup.on('click', 'button', function() {
-	// 		$buttonGroup.find('.is-checked').removeClass('is-checked');
-	// 		$(this).addClass('is-checked');
+	// 		$buttonGroup.find('.is-clicked').removeClass('is-clicked');
+	// 		$(this).addClass('is-clicked');
 	// 	});
 	// });
 
